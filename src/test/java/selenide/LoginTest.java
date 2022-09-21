@@ -13,6 +13,9 @@ public class LoginTest {
     Homepage homePage;
     LoginPage loginPage;
 
+    /**
+     * This test checks successful login functionality
+     */
     @Test
     public void loginWithValidCredentials() {
         homePage = open(BASE_URL, Homepage.class);
