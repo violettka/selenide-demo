@@ -17,7 +17,7 @@ public class UserWalksOnTheSiteTest {
     private Homepage homePage;
     private LoginPage loginPage;
     private RestInCharlottePage restInCharlottePage;
-    private TwoFriends twoFriends;
+    private TwoFriendsPage twoFriendsPage;
     private ColnPage colnPage;
 
     @Test
@@ -31,8 +31,8 @@ public class UserWalksOnTheSiteTest {
         loginPage.fillInValidCred();
         loginPage.clickOnLoginBtnHP();
         restInCharlottePage = homePage.clickOnCharlotte();
-        twoFriends = restInCharlottePage.chooseBurgersFilter();
-        homePage = twoFriends.twoFriends();
+        twoFriendsPage = restInCharlottePage.chooseBurgersFilter();
+        homePage = twoFriendsPage.exploreTwoFriends();
         colnPage = homePage.clickOnColnBtn();
         homePage = colnPage.outdoorSeating();
     }

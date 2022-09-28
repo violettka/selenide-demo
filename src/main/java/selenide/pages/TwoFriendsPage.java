@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.page;
 /**
  * This class contains Two Friends page locators and methods.
  */
-public class TwoFriends {
+public class TwoFriendsPage extends Page {
 
     //locators
     private static final By menuBtn = By.xpath("//*[@data-qa='sub-nav-tab-tab-menu']");
@@ -17,7 +17,7 @@ public class TwoFriends {
     private static final By logoBtn = By.xpath("//*[@data-qa='header-logo']");
 
     //methods
-    public Homepage twoFriends() {
+    public Homepage exploreTwoFriends() {
         $(menuBtn).click();
         $(translateBtn).click();
         $(photosBtn).click();

@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.page;
 /**
  * This class contains Restaurants In Charlottenburg page locators and methods.
  */
-public class RestInCharlottePage {
+public class RestInCharlottePage extends Page {
 
     //locators
     private static final By showAllBtn = By.xpath("//*[@data-qa='show-all-button']");
@@ -17,11 +17,11 @@ public class RestInCharlottePage {
     private static final By twoFriends = By.xpath("//div[@id='tab-merchants']/div[2]/div/a");
 
     //methods
-    public TwoFriends chooseBurgersFilter() {
+    public TwoFriendsPage chooseBurgersFilter() {
         $(showAllBtn).click();
         $(burgersBtn).click();
         $(bookableOnlineBtn).click();
         $(twoFriends).click();
-        return page(TwoFriends.class);
+        return page(TwoFriendsPage.class);
     }
 }

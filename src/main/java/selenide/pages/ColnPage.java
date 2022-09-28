@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.page;
 /**
  * This class contains Coln page locators and methods.
  */
-public class ColnPage {
+public class ColnPage extends Page {
 
     //constants
     private static final By outdoorBtn = By.xpath("//*[@data-qa='filter-button-new']");
