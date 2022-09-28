@@ -11,7 +11,7 @@ import static selenide.pages.Page.BASE_URL;
 /**
  * This class contains tests where the user walks on the site
  */
-public class UserWalksOnTheSite {
+public class UserWalksOnTheSiteTest {
 
     //classes
     private Homepage homePage;
