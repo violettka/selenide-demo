@@ -16,10 +16,15 @@ public class RestaurantPage extends Page {
     private static final By nextMonth = By.xpath("//*[@data-qa='day-picker-navbar-next']");
     private static final By firstDayOfTheMonth = By.xpath("//*[@class='DayPicker-Day'][@tabindex='-1']");
     private static final By reserveTableBtn = By.xpath("//*[@data-vwo='reservation-init']");
+    private static final By timePickerStartField = By.xpath("//*[@data-qa='widget-time-picker-start']/select");
+    private static final By timePickerEndField = By.xpath("//*[@data-qa='widget-time-picker-end']/select");
 
     //methods
     public void chooseReservationDate() {
         $(chooseDateField).shouldBe(Condition.visible);
+    }
+
+    public void dayChoose() {
         $(chooseDateField).click();
         $(nextMonth).click();
         $(firstDayOfTheMonth).click();
@@ -28,5 +33,16 @@ public class RestaurantPage extends Page {
     public CompleteReservation clickOnReserveTable() {
         $(reserveTableBtn).click();
         return page(CompleteReservation.class);
+    }
+
+    public void chooseTimeslot(String timeFrom, String timeTo) {
+        $(timePickerStartField).selectOption(timeFrom);
+        $(timePickerEndField).selectOption(timeTo);
+    }
+
+    public void reserveNow(String timeFrom, String timeTo) {
+        dayChoose();
+        chooseTimeslot(timeFrom, timeTo);
+        clickOnReserveTable();
     }
 }
