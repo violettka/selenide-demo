@@ -1,10 +1,11 @@
 package selenide;
 
 import org.junit.jupiter.api.Test;
-import pages.*;
+
+import selenide.pages.*;
 
 import static com.codeborne.selenide.Selenide.open;
-import static pages.Page.*;
+import static selenide.pages.Page.*;
 
 public class E2ETest {
 

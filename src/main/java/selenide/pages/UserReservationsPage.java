@@ -1,23 +1,22 @@
 package selenide.pages;
 
-import com.codeborne.selenide.Condition;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
 
-/**
- * Class UserReservationsPage contains all user reservations page locators and methods.
- */
-public class UserReservationsPage extends Page {
+public class UserReservationsPage extends Page{
 
-    //locators
-    private static final By editReservationBtn = By.xpath("//button[contains(.,'Edit reservation')]");
+    // locators
+    static final By mogg = By.xpath("//*[@data-qa='merchant-name']");
 
-    //methods
-    public EditReservationPage clickOnEditReservation() {
-        $(editReservationBtn).shouldBe(Condition.visible);
-        $(editReservationBtn).click();
-        return page(EditReservationPage.class);
+    // methods
+    public void restaurantIsDisplayed() {
+        $(mogg).isDisplayed();
+    }
+
+    public RestaurantPage restaurantClick() {
+        $(mogg).click();
+        return page(RestaurantPage.class);
     }
 }
