@@ -15,6 +15,8 @@ public class Homepage extends Page {
     private static final By signUpBtn = By.xpath("//*[@data-qa='header-register-btn']");
     private static By loginBtn = By.xpath("//*[@data-qa='header-login-btn']");
     private static By userIcon = By.xpath("//*[@data-qa='header-navigation-button']");
+    private static final By charlottenburgBtn = By.xpath("//div[@id='explore']/div/div[2]/div/div/a[2]/h4");
+    private static final By colnBtn = By.xpath("//div[3]/div/div/div/a[2]");
 
     // methods
     public SignUpPage clickOnSignUpBtn() {
@@ -29,5 +31,15 @@ public class Homepage extends Page {
 
     public void userIconPresent() {
         $(userIcon).should(Condition.exist);
+    }
+
+    public RestInCharlottePage clickOnCharlotte(){
+        $(charlottenburgBtn).click();
+        return page(RestInCharlottePage.class);
+    }
+
+    public ColnPage clickOnColnBtn(){
+        $(colnBtn).click();
+        return page(ColnPage.class);
     }
 }
