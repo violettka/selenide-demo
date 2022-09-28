@@ -1,11 +1,11 @@
 package selenide;
 
 import org.junit.jupiter.api.Test;
-import pages.Homepage;
-import pages.LoginPage;
+import selenide.pages.Homepage;
+import selenide.pages.LoginPage;
 
 import static com.codeborne.selenide.Selenide.open;
-import static pages.Page.BASE_URL;
+import static selenide.pages.Page.BASE_URL;
 
 public class LoginTest {
 

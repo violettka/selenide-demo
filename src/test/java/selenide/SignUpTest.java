@@ -2,8 +2,8 @@ package selenide;
 
 import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.Test;
-import pages.Homepage;
-import pages.SignUpPage;
+import selenide.pages.Homepage;
+import selenide.pages.SignUpPage;
 
 import static com.codeborne.selenide.Selenide.open;
 

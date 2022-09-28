@@ -1,10 +1,11 @@
-package pages;
+package selenide.pages;
 
+import com.codeborne.selenide.Selenide;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
-import static pages.UserReservationsPage.mogg;
+
 
 public class FilterPage extends Page {
 
@@ -18,8 +19,8 @@ public class FilterPage extends Page {
 
     // Methods
     public RestaurantPage clickOnRestaurant() {
-        $(mogg).click();
-        return page(RestaurantPage.class);
+        $(UserReservationsPage.mogg).click();
+        return Selenide.page(RestaurantPage.class);
     }
 
     public void clickOnFindCityField() {

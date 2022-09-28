@@ -1,4 +1,4 @@
-package pages;
+package selenide.pages;
 import com.codeborne.selenide.Selenide;
 import org.openqa.selenium.By;
 
@@ -21,12 +21,12 @@ public class Homepage extends Page {
     // methods
     public SignUpPage clickOnSignUpBtn() {
         $(signUpBtn).click();
-        return page(SignUpPage.class);
+        return Selenide.page(SignUpPage.class);
     }
 
     public LoginPage clickOnLoginBtn() {
         $(loginBtn).click();
-        return page(LoginPage.class);
+        return Selenide.page(LoginPage.class);
     }
 
     public void userIconPresent() {

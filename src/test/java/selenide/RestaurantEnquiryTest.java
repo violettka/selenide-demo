@@ -2,7 +2,7 @@ package selenide;
 
 import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.Test;
-import pages.RestaurantEnquiryPage;
+import selenide.pages.RestaurantEnquiryPage;
 
 import static com.codeborne.selenide.Selenide.open;
 

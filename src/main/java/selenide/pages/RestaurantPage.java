@@ -1,5 +1,6 @@
-package pages;
+package selenide.pages;
 
+import com.codeborne.selenide.Selenide;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -32,7 +33,7 @@ public class RestaurantPage extends Page {
 
     public ReservationPage clickOnReserveBtn() {
         $(reserveBtn).click();
-        return page(ReservationPage.class);
+        return Selenide.page(ReservationPage.class);
     }
 
     public void reserveNow() {

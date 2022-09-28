@@ -1,4 +1,4 @@
-package pages;
+package selenide.pages;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 
