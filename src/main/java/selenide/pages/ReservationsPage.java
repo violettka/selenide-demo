@@ -14,8 +14,8 @@ public class ReservationsPage extends Page {
     private static final By discoverRestBtn = By.xpath("//*[@data-qa='reservations-cta-reserve']");
 
     //methods
-    public RestaurantsBerlinPage clickOnDiscoverRestBtn() {
+    public FilterPage clickOnDiscoverRestBtn() {
         $(discoverRestBtn).click();
-        return page(RestaurantsBerlinPage.class);
+        return page(FilterPage.class);
     }
 }

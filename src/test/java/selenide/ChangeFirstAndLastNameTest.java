@@ -16,8 +16,8 @@ public class ChangeFirstAndLastNameTest {
     private LoginPage loginPage;
     private ProfilePage profilePage;
     private ReservationsPage reservationsPage;
-    private RestaurantsBerlinPage restaurantsBerlinPage;
-    private LaBandidaPage laBandidaPage;
+    private FilterPage restaurantsBerlinPage;
+    private RestaurantPage laBandidaPage;
 
     @Test
     /**

@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.page;
 /**
  *This class contains LaBandida page locators and methods.
  */
-public class LaBandidaPage extends Page{
+public class RestaurantPage extends Page{
 
     //locators
     private static final By iconBtn = By.xpath("//*[@data-qa='header-navigation-button']");
