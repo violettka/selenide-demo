@@ -29,8 +29,7 @@ public class Homepage extends Page {
         $(userIcon).should(Condition.exist);
     }
 
-    public ProfilePage userAcc() {
-        Selenide.sleep(3000);
+    public ProfilePage clickOnProfileBtn() {
         $(userIcon).doubleClick();
         $(profileBtn).click();
         return page(ProfilePage.class);

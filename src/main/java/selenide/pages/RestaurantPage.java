@@ -7,17 +7,14 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
 
 /**
- *This class contains LaBandida page locators and methods.
+ *This class contains Restaurant page locators and methods.
  */
 public class RestaurantPage extends Page{
 
-    //locators
-    private static final By iconBtn = By.xpath("//*[@data-qa='header-navigation-button']");
-    private static final By profileBtn = By.xpath("//*[@data-qa='header-navigation-profile']");
-
+    //methods
     public ProfilePage clickOnProfile() {
         Selenide.sleep(3000);
-        $(iconBtn).doubleClick();
+        $(userIcon).doubleClick();
         $(profileBtn).click();
         return page(ProfilePage.class);
     }

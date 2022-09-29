@@ -19,7 +19,7 @@ public class ProfilePage extends Page{
     private static final By lastNameField = By.xpath("//*[@data-qa='edit-last-name']");
     private static final By saveChangesBtn = By.xpath("//*[@data-qa='edit-profile-btn']");
     private static final By reservationsBtn = By.xpath("//*[@data-qa='navigation-reservations']");
-    private static final By welcomeBack = By.xpath("//span/span");
+    private static final By welcomeBackText = By.xpath("//span/span");
 
     public void changeData() {
         $(firstNameField).clear();
@@ -29,7 +29,7 @@ public class ProfilePage extends Page{
         $(saveChangesBtn).click();
     }
 
-    public ReservationsPage clickOnReservations() {
+    public ReservationsPage clickOnReservationsBtn() {
         $(reservationsBtn).click();
         return page(ReservationsPage.class);
     }
@@ -43,6 +43,6 @@ public class ProfilePage extends Page{
     }
 
     public void checkName() {
-        $(welcomeBack).shouldHave(Condition.text(CHANGENAME));
+        $(welcomeBackText).shouldHave(Condition.text(CHANGENAME));
     }
 }

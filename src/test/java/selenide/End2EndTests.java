@@ -9,19 +9,19 @@ import static selenide.pages.Page.BASE_URL;
 /**
  * This class contains tests for Profile functionality
  */
-public class ChangeFirstAndLastNameTest {
+public class End2EndTests {
 
     //classes
     private Homepage homePage;
     private LoginPage loginPage;
     private ProfilePage profilePage;
     private ReservationsPage reservationsPage;
-    private FilterPage restaurantsBerlinPage;
-    private RestaurantPage laBandidaPage;
+    private FilterPage FilterPage;
+    private RestaurantPage restaurantPage;
 
     @Test
     /**
-     *The negative test where a registered user changes his first and last name, searches for restaurants with Argentinean food and then changes his name and last name again
+     *The test where a registered user changes his first and last name, searches for restaurants with Argentinean food and then changes his name and last name again
      */
     public void changeFirstAndLastName() {
         homePage = open(BASE_URL, Homepage.class);
@@ -29,12 +29,12 @@ public class ChangeFirstAndLastNameTest {
         loginPage = homePage.clickOnLoginBtn();
         loginPage.fillInValidCred();
         loginPage.clickOnLoginBtnHP();
-        profilePage = homePage.userAcc();
+        profilePage = homePage.clickOnProfileBtn();
         profilePage.changeData();
-        reservationsPage = profilePage.clickOnReservations();
-        restaurantsBerlinPage = reservationsPage.clickOnDiscoverRestBtn();
-        laBandidaPage = restaurantsBerlinPage.chooseFilter();
-        profilePage = laBandidaPage.clickOnProfile();
+        reservationsPage = profilePage.clickOnReservationsBtn();
+        FilterPage = reservationsPage.clickOnDiscoverRestBtn();
+        restaurantPage = FilterPage.chooseFilter();
+        profilePage = FilterPage.clickOnProfileBtnAgain();
         profilePage.changeDataAgain();
         profilePage.checkName();
     }

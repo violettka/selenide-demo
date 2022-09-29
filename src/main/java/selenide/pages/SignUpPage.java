@@ -17,7 +17,6 @@ public class SignUpPage extends Page {
     private static final By passwordField = By.xpath("//*[@data-qa='password-input']");
     private static final By confirmPasswordField = By.xpath("//*[@data-qa='password-confirm-input']");
     private static final By createAccountBtn = By.xpath("//*[@data-qa='submit-btn']");
-    private static final By checkboxTooltip = By.xpath("//*[contains(text(),'tick')]");
 
     // methods
     public void fillInSignUpFields() {
