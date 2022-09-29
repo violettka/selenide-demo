@@ -10,33 +10,22 @@ import static com.codeborne.selenide.Selenide.page;
 /**
  *This class contains all Profile page locators and methods.
  */
-public class ProfilePage extends Page{
-
-    //constants
-    public static String CHANGENAME = "Welcome back, Андрей";
+public class ProfilePage extends Page {
 
     //locators
     private static final By firstNameField = By.xpath("//*[@data-qa='edit-first-name']");
     private static final By lastNameField = By.xpath("//*[@data-qa='edit-last-name']");
     private static final By saveChangesBtn = By.xpath("//*[@data-qa='edit-profile-btn']");
-    private static final By reservationsBtn = By.xpath("//*[@data-qa='navigation-reservations']");
     private static final By welcomeBackText = By.xpath("//span/span");
 
-    public void  changeData() {
+    public void changeDataAndCheckIt() {
         faker = new Faker();
+        String name = faker.name().firstName();
         $(firstNameField).clear();
-        $(firstNameField).setValue(faker.name().firstName());
+        $(firstNameField).setValue(name);
         $(lastNameField).clear();
         $(lastNameField).setValue(faker.name().lastName());
         $(saveChangesBtn).click();
-    }
-
-    public ReservationsPage clickOnReservationsBtn() {
-        $(reservationsBtn).click();
-        return page(ReservationsPage.class);
-    }
-
-    public void checkName() {
-        $(welcomeBackText).shouldHave(Condition.text(CHANGENAME));
+        $(welcomeBackText).shouldHave(Condition.text("Welcome back, " + name));
     }
 }

@@ -11,9 +11,6 @@ import static com.codeborne.selenide.Selenide.page;
  */
 public class Homepage extends Page {
 
-    // locators
-
-
     // methods
     public SignUpPage clickOnSignUpBtn() {
         $(signUpBtn).click();
@@ -27,11 +24,5 @@ public class Homepage extends Page {
 
     public void userIconPresent() {
         $(userIcon).should(Condition.exist);
-    }
-
-    public ProfilePage clickOnProfileBtn() {
-        $(userIcon).doubleClick();
-        $(profileBtn).click();
-        return page(ProfilePage.class);
     }
 }

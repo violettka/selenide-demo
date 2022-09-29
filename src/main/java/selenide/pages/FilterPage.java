@@ -15,14 +15,9 @@ public class FilterPage extends Page {
     private static final By laBandidaBtn = By.xpath("//div[@id='tab-merchants']/div[3]/div/a");
 
     //methods
-    public RestaurantPage chooseFilter() {
+    public RestaurantPage chooseArgentinianFilter() {
         $(argentianFilter).click();
         $(laBandidaBtn).click();
         return page(RestaurantPage.class);
-    }
-
-    public ProfilePage clickOnProfileBtnAgain(){
-        $(profileBtn).click();
-        return page(ProfilePage.class);
     }
 }

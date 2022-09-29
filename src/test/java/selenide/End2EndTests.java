@@ -30,12 +30,11 @@ public class End2EndTests {
         loginPage.fillInValidCred();
         loginPage.clickOnLoginBtnHP();
         profilePage = homePage.clickOnProfileBtn();
-        profilePage.changeData();
+        profilePage.changeDataAndCheckIt();
         reservationsPage = profilePage.clickOnReservationsBtn();
         FilterPage = reservationsPage.clickOnDiscoverRestBtn();
-        restaurantPage = FilterPage.chooseFilter();
-        profilePage = FilterPage.clickOnProfileBtnAgain();
-        profilePage.changeDataAgain();
-        profilePage.checkName();
+        restaurantPage = FilterPage.chooseArgentinianFilter();
+        profilePage = restaurantPage.clickOnProfileBtn();
+        profilePage.changeDataAndCheckIt();
     }
 }

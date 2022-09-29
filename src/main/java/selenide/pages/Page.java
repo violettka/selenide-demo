@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.page;
 
 /**
  * Abstract class Page contains common locators, data and methods shared within the Quandoo pages.
@@ -21,6 +22,7 @@ public abstract class Page {
     public static final By signUpBtn = By.xpath("//*[@data-qa='header-register-btn']");
     public static final By loginBtn = By.xpath("//*[@data-qa='header-login-btn']");
     public static final By userIcon = By.xpath("//*[@data-qa='header-navigation-button']");
+    public static final By reservationsBtn = By.xpath("//*[@data-qa='navigation-reservations']");
     public static final By profileBtn = By.xpath("//*[@data-qa='header-navigation-profile']");
     public static final By accCookiesBtn = By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll");
 
@@ -32,4 +34,14 @@ public abstract class Page {
         $(accCookiesBtn).click();
     }
 
+    public ProfilePage clickOnProfileBtn() {
+        $(userIcon).doubleClick();
+        $(profileBtn).click();
+        return page(ProfilePage.class);
+    }
+
+    public ReservationsPage clickOnReservationsBtn() {
+        $(reservationsBtn).click();
+        return page(ReservationsPage.class);
+    }
 }
