@@ -1,6 +1,7 @@
 package selenide.pages;
 
 import com.codeborne.selenide.Condition;
+import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -21,25 +22,18 @@ public class ProfilePage extends Page{
     private static final By reservationsBtn = By.xpath("//*[@data-qa='navigation-reservations']");
     private static final By welcomeBackText = By.xpath("//span/span");
 
-    public void changeData() {
+    public void  changeData() {
+        faker = new Faker();
         $(firstNameField).clear();
-        $(firstNameField).setValue("Сергей");
+        $(firstNameField).setValue(faker.name().firstName());
         $(lastNameField).clear();
-        $(lastNameField).setValue("Сергеев");
+        $(lastNameField).setValue(faker.name().lastName());
         $(saveChangesBtn).click();
     }
 
     public ReservationsPage clickOnReservationsBtn() {
         $(reservationsBtn).click();
         return page(ReservationsPage.class);
-    }
-
-    public void changeDataAgain() {
-        $(firstNameField).clear();
-        $(firstNameField).setValue("Андрей");
-        $(lastNameField).clear();
-        $(lastNameField).setValue("Андреев");
-        $(saveChangesBtn).click();
     }
 
     public void checkName() {
