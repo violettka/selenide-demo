@@ -12,6 +12,10 @@ public class Homepage extends Page {
 
     // locators
     private static final By findBtn = By.xpath("//*[@data-qa='button-search-find-hero']");
+    private static final By signUpBtn = By.xpath("//*[@data-qa='header-register-btn']");
+    private static By loginBtn = By.xpath("//*[@data-qa='header-login-btn']");
+    private static By userIcon = By.xpath("//*[@data-qa='header-navigation-button']");
+    private static By logoutBtn = By.xpath("//*[@data-qa='header-navigation-logout']");
 
     // methods
     public SignUpPage clickOnSignUpBtn() {
@@ -33,5 +37,13 @@ public class Homepage extends Page {
         $$(searchCityField).get(1).setValue(cityName);
         $(findBtn).click();
         return page(FilterPage.class);
+    }
+
+    public void userIconHover(){
+        $(userIcon).hover();
+    }
+
+    public void clickOnLogoutBtn(){
+        $(logoutBtn).click();
     }
 }
