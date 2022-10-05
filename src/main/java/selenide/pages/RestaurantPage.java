@@ -40,9 +40,15 @@ public class RestaurantPage extends Page {
         $(timePickerEndField).selectOption(timeTo);
     }
 
-    public void reserveNow(String timeFrom, String timeTo) {
+    public ReservationPage clickOnReserveBtn() {
+        $(reserveBtn).click();
+        return page(ReservationPage.class);
+    }
+
+    public ReservationPage reserveNow(String timeFrom, String timeTo) {
         dayChoose();
         chooseTimeslot(timeFrom, timeTo);
-        clickOnReserveTable();
+        clickOnReserveBtn();
+        return page(ReservationPage.class);
     }
 }

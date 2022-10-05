@@ -3,6 +3,7 @@ package selenide.pages;
 import com.codeborne.selenide.Condition;
 import org.openqa.selenium.By;
 
+import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
 
@@ -25,7 +26,7 @@ public class UserReservationsPage extends Page {
 
     // methods
     public void restaurantIsDisplayed() {
-        $(wartesaal).isDisplayed();
+        $(wartesaal).should(exist);
     }
 
     public RestaurantPage restaurantClick() {

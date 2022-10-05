@@ -15,12 +15,9 @@ public class Homepage extends Page {
     private static final By findBtn = By.xpath("//*[@data-qa='button-search-find-hero']");
     private static final By profileFiels = By.xpath("//*[@data-qa='header-navigation-profile']");
 
-    private static By restaurantField = By.xpath("//input[@name='dining'])[2]");
-    private static By destinationField = By.xpath("//input[@name='destination'])[2]");
+    private static By restaurantField = By.xpath("(//input[@name='dining'])[2]");
+    private static By destinationField = By.xpath("(//input[@name='destination'])[2]");
     private static By findBtn = By.xpath("//*[@data-qa='button-search-find-hero']");
-
-    private static final By charlottenburgBtn = By.xpath("//div[@id='explore']/div/div[2]/div/div/a[2]/h4");
-    private static final By colnBtn = By.xpath("//div[3]/div/div/div/a[2]");
 
     // methods
     public SignUpPage clickOnSignUpBtn() {
@@ -43,7 +40,6 @@ public class Homepage extends Page {
         $(findBtn).click();
         return page(FilterPage.class);
     }
-
 
     public RestInCharlottePage clickOnCharlotte() {
         $(charlottenburgBtn).click();
@@ -75,9 +71,10 @@ public class Homepage extends Page {
         return page(FilterPage.class);
     }
 
-    public void fillInTheRestaurant() {
+    public FilterPage fillInTheRestaurantAndClickOnFindBtn() {
         fillDestinationField(RESTAURANT_CITY);
         fillRestaurantField(RESTAURANT_NAME);
         clickOnFindBtn();
+        return page(FilterPage.class);
     }
 }
