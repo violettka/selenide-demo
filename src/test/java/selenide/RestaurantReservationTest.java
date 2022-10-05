@@ -12,7 +12,7 @@ public class RestaurantReservationTest {
     LoginPage loginPage;
     FilterPage filterPage;
     RestaurantPage restaurantPage;
-    ReservationPage reservationPage;
+    CompleteReservationPage completeReservationPage;
     CheckoutSummaryPage checkoutSummaryPage;
     UserReservationsPage userReservationsPage;
 
@@ -29,8 +29,8 @@ public class RestaurantReservationTest {
         filterPage = homepage.fillInTheRestaurantAndClickOnFindBtn();
         restaurantPage = filterPage.clickOnRestaurant();
         restaurantPage.reserveNow("7:00 pm", "7:30 pm");
-        checkoutSummaryPage = reservationPage.clickOnReserveNowBtn();
+        checkoutSummaryPage = completeReservationPage.clickOnReserveNowBtn();
         userReservationsPage = checkoutSummaryPage.clickOnLoginIcon();
-        userReservationsPage.restaurantIsDisplayed();
+        userReservationsPage.anyRestaurantIsDisplayed();
     }
 }

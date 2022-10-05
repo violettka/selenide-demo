@@ -18,6 +18,8 @@ public abstract class Page {
     // constant credentials
     public static String VALID_EMAIL = "violetaabramova@yandex.ru";
     public static String VALID_PASS = "8vzN$ht4eFuG45$";
+    public static String CUISINES_PIZZA = "Pizza";
+    public static String RESTAURANT_CITY = "Berlin";
 
     // constant url
     public static String LOCALISATION_EN = "/en";

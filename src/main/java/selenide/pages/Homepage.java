@@ -1,8 +1,8 @@
 package selenide.pages;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Selenide;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 
 import static com.codeborne.selenide.Selenide.*;
 
@@ -63,7 +63,8 @@ public class Homepage extends Page {
     }
 
     public void fillDestinationField(String where) {
-        $(destinationField).sendKeys(where);
+        $(destinationField).sendKeys(where); // нужно ожидание, т.к. не успевает меняться город
+        $(restaurantField).shouldBe(visible).sendKeys(Keys.ENTER);
     }
 
     public FilterPage clickOnFindBtn() {
@@ -73,7 +74,7 @@ public class Homepage extends Page {
 
     public FilterPage fillInTheRestaurantAndClickOnFindBtn() {
         fillDestinationField(RESTAURANT_CITY);
-        fillRestaurantField(RESTAURANT_NAME);
+        fillRestaurantField(CUISINES_PIZZA);
         clickOnFindBtn();
         return page(FilterPage.class);
     }

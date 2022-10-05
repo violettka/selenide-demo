@@ -2,18 +2,23 @@ package selenide.pages;
 
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.page;
+import static com.codeborne.selenide.Selenide.*;
 
 /**
  * Class FilterPage contains all filter page locators and methods.
  */
 public class FilterPage extends Page {
 
-    //locators
+    // locators
+    private static By anyPizzeria = By.xpath("(//*[@data-qa='content'])[1]");
     private static final By firstRestaurantBtn = By.xpath("//*[@id='tab-merchants']/div[2]/div[1]/a");
 
-    // methods
+    // Methods
+    public RestaurantPage clickOnRestaurant() {
+        $(anyPizzeria).click();
+        return page(RestaurantPage.class);
+    }
+
     public RestaurantPage clickOnFirstRestaurantBtn() {
         $(firstRestaurantBtn).click();
         return page(RestaurantPage.class);
