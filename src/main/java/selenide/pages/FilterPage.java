@@ -6,18 +6,16 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
 
 /**
- * This class contains Filter page locators and methods.
+ * Class FilterPage contains all filter page locators and methods.
  */
 public class FilterPage extends Page {
 
     //locators
-    private static final By argentianFilter = By.xpath("//li[4]/label/i");
-    private static final By laBandidaBtn = By.xpath("//div[@id='tab-merchants']/div[3]/div/a");
+    private static final By firstRestaurantBtn = By.xpath("//*[@id='tab-merchants']/div[2]/div[1]/a");
 
-    //methods
-    public RestaurantPage chooseArgentinianFilter() {
-        $(argentianFilter).click();
-        $(laBandidaBtn).click();
+    // methods
+    public RestaurantPage clickOnFirstRestaurantBtn() {
+        $(firstRestaurantBtn).click();
         return page(RestaurantPage.class);
     }
 }
