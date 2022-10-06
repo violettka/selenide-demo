@@ -10,15 +10,9 @@ import static com.codeborne.selenide.Selenide.*;
 public class FilterPage extends Page {
 
     // locators
-    private static By anyPizzeria = By.xpath("(//*[@data-qa='content'])[1]");
     private static final By firstRestaurantBtn = By.xpath("//*[@id='tab-merchants']/div[2]/div[1]/a");
 
     // Methods
-    public RestaurantPage clickOnRestaurant() {
-        $(anyPizzeria).click();
-        return page(RestaurantPage.class);
-    }
-
     public RestaurantPage clickOnFirstRestaurantBtn() {
         $(firstRestaurantBtn).click();
         return page(RestaurantPage.class);

@@ -16,9 +16,4 @@ public class CompleteReservationPage extends Page {
         $(reserveNowBtn).click();
         return page(CheckoutSummaryPage.class);
     }
-
-    public LoginPage clickOnLoginBtn() {
-        $(loginBtn).click();
-        return page(LoginPage.class);
-    }
 }

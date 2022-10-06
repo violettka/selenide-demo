@@ -12,6 +12,8 @@ import static com.codeborne.selenide.Selenide.page;
  */
 public abstract class Page {
 
+    public static String specialName = "";
+
     // classes
     static Faker faker = new Faker();
 
@@ -40,7 +42,8 @@ public abstract class Page {
     public static final By accCookiesBtn = By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll");
     protected static final By searchCityField = By.xpath("//*[@data-qa='search-bar-destination-input']");
     protected static final By searchRestaurantField = By.xpath("//input[@name='dining']");
-
+    private static By restaurantName = By.xpath("//*[@data-qa='reservation-details-merchant-name']");
+    private static final By upcomingReservations = By.xpath("//*[@data-qa='cards-upcoming-reservations']");
 
     // Methods
     public void accCookies() {
@@ -56,6 +59,14 @@ public abstract class Page {
 
     public UserReservationsPage clickOnReservationsBtn() {
         $(reservationsBtn).click();
+        return page(UserReservationsPage.class);
+    }
+
+    public UserReservationsPage clickOnLoginIcon() {
+        specialName = $(restaurantName).getText();
+        $(userIcon).click();
+        $(reservationsBtn).click();
+        $(upcomingReservations).shouldHave(Condition.text(specialName));
         return page(UserReservationsPage.class);
     }
 }

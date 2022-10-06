@@ -41,7 +41,7 @@ public class RestaurantPage extends Page {
     }
 
     public CompleteReservationPage clickOnReserveBtn() {
-        $(reserveBtn).click();
+        $(reserveTableBtn).click();
         return page(CompleteReservationPage.class);
     }
 
