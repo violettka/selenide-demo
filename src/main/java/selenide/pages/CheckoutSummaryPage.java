@@ -15,8 +15,8 @@ public class CheckoutSummaryPage extends Page {
     public static String specialName = "";
 
     // locators
-    private static final By loginIcon = By.xpath("//*[@data-qa='header-navigation-button");
-    private static final By reservations = By.xpath("//*[@data-qa='header-navigation-button");
+    private static final By loginIcon = By.xpath("//*[@data-qa='header-navigation-button']");
+    private static final By reservations = By.xpath("//*[@data-qa='header-navigation-reservations']");
     private static By restaurantName = By.xpath("//*[@data-qa='reservation-details-merchant-name']");
     private static final By upcomingReservations = By.xpath("//*[@data-qa='cards-upcoming-reservations']");
 
