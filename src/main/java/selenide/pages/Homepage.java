@@ -3,8 +3,7 @@ package selenide.pages;
 import com.codeborne.selenide.Condition;
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.page;
+import static com.codeborne.selenide.Selenide.*;
 
 /**
  * Class Homepage contains all homepage locators and methods.
@@ -12,9 +11,7 @@ import static com.codeborne.selenide.Selenide.page;
 public class Homepage extends Page {
 
     // locators
-    private static final By signUpBtn = By.xpath("//*[@data-qa='header-register-btn']");
-    private static By loginBtn = By.xpath("//*[@data-qa='header-login-btn']");
-    private static By userIcon = By.xpath("//*[@data-qa='header-navigation-button']");
+    private static final By findBtn = By.xpath("//*[@data-qa='button-search-find-hero']");
 
     // methods
     public SignUpPage clickOnSignUpBtn() {
@@ -29,5 +26,12 @@ public class Homepage extends Page {
 
     public void userIconPresent() {
         $(userIcon).should(Condition.exist);
+    }
+
+    public FilterPage searchRestaurant(String restaurantName,String cityName){
+        $$(searchRestaurantField).get(1).setValue(restaurantName);
+        $$(searchCityField).get(1).setValue(cityName);
+        $(findBtn).click();
+        return page(FilterPage.class);
     }
 }
