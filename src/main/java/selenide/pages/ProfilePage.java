@@ -14,11 +14,8 @@ public class ProfilePage extends Page {
     private static final By firstNameField = By.xpath("//*[@data-qa='edit-first-name']");
     private static final By lastNameField = By.xpath("//*[@data-qa='edit-last-name']");
     private static final By saveChangesBtn = By.xpath("//*[@data-qa='edit-profile-btn']");
-    private static final By userReservationsBtn = By.xpath("//*[@data-qa='navigation-reservations']");
 
     //methods
-
-
     public void changeFirstAndLastName(String firstName, String lastName) {
         $(firstNameField).setValue(firstName);
         $(lastNameField).setValue(lastName);

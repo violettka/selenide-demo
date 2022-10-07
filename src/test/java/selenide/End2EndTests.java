@@ -21,6 +21,7 @@ public class End2EndTests {
     private ProfilePage profilePage;
     private UserReservationsPage userReservPage;
     private EditReservationPage editReservPage;
+    private CancelReservationPage cancelReservPage;
 
 
     @Test
@@ -43,5 +44,7 @@ public class End2EndTests {
         userReservPage = profilePage.clickOnReservationsBtn();
         editReservPage = userReservPage.clickOnEditReservation();
         editReservPage.checkName(USER_FIRST_NAME);
+        cancelReservPage = editReservPage.cancelReservation();
+        cancelReservPage.clickOnConfirmCancelBtn();
     }
 }
