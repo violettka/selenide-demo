@@ -16,6 +16,8 @@ public class RestaurantPage extends Page {
     private static final By nextMonth = By.xpath("//*[@data-qa='day-picker-navbar-next']");
     private static final By firstDayOfTheMonth = By.xpath("//*[@class='DayPicker-Day'][@tabindex='-1']");
     private static final By reserveTableBtn = By.xpath("//*[@data-vwo='reservation-init']");
+    private static final By dataFieldTime = By.xpath("//*[@data-qa='booking-times']/ul/li/ul/li[1]");
+
 
     //methods
     public void chooseReservationDate() {
@@ -23,6 +25,8 @@ public class RestaurantPage extends Page {
         $(chooseDateField).click();
         $(nextMonth).click();
         $(firstDayOfTheMonth).click();
+        $(dataFieldTime).click();
+
     }
 
     public CompleteReservation clickOnReserveTable() {

@@ -1,5 +1,6 @@
 package selenide.pages;
 
+import com.codeborne.selenide.Selenide;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -15,6 +16,7 @@ public class CompleteReservation extends Page {
 
     //methods
     public CheckoutSummaryPage clickOnReserveNowBtn() {
+        Selenide.sleep(3000);
         $(reserveNowBtn).click();
         return page(CheckoutSummaryPage.class);
     }
