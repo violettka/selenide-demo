@@ -17,7 +17,9 @@ public class ProfilePage extends Page {
 
     //methods
     public void changeFirstAndLastName(String firstName, String lastName) {
+        $(firstNameField).clear();
         $(firstNameField).setValue(firstName);
+        $(lastNameField).clear();
         $(lastNameField).setValue(lastName);
         $(saveChangesBtn).click();
     }
