@@ -1,7 +1,7 @@
 package selenide.pages;
 
+import com.codeborne.selenide.Condition;
 import org.openqa.selenium.By;
-
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
 
@@ -15,6 +15,7 @@ public class CompleteReservation extends Page {
 
     //methods
     public CheckoutSummaryPage clickOnReserveNowBtn() {
+        $(reserveNowBtn).shouldBe(Condition.visible);
         $(reserveNowBtn).click();
         return page(CheckoutSummaryPage.class);
     }
