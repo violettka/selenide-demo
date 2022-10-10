@@ -2,12 +2,12 @@ package selenide.pages;
 
 import org.openqa.selenium.By;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
 
 public class LoginPage extends Page {
 
-    LoginPage loginPage;
 
     // locators
 
@@ -21,10 +21,13 @@ public class LoginPage extends Page {
     private static By checkTermsApple = By.cssSelector("#root>div>div>form>section>div:nth-child(4)>div.consentModal__Wrapper-sc-1favlfo-0.fJWyJT>label>i>svg");
     private static By connectBtn = By.xpath("//*[@data-qa='connect-btn']");
 
+    private static By initialViewForGoogle = By.cssSelector("#initialView>div.xkfVF>div>div.Lth2jb>div");
+    private static By initialViewForFacebook = By.xpath("//*[@id='header_block']");
+    private static By initialViewForApple = By.xpath("//*[@id='ac-localnav']");
+
     private static By emailField = By.xpath("//*[@data-qa='email-input']");
     private static By passwordField = By.xpath("//*[@data-qa='password-input']");
     private static By loginBtn = By.xpath("//*[@data-qa='login-btn']");
-
 
 
     // methods
@@ -33,15 +36,15 @@ public class LoginPage extends Page {
         $(passwordField).setValue(VALID_PASS);
     }
 
-    public void googleBtn(){
+    public void googleBtn() {
         $(googleBtn).click();
     }
 
-    public void facebookBtn(){
+    public void facebookBtn() {
         $(facebookBtn).click();
     }
 
-    public void appleBtn(){
+    public void appleBtn() {
         $(appleBtn).click();
     }
 
@@ -50,17 +53,31 @@ public class LoginPage extends Page {
         $(connectBtn).click();
 
     }
-    public void checkTermsFacebookBtn(){
-        $(checkTermsFacebook).click();
-        $(connectBtn).click();
 
-        }
-    public void checkTermsAppleBtn(){
-        $(checkTermsApple).click();
+    // Initial views
+    public void initialViewGoogle() {
+        $(initialViewForGoogle).shouldHave(text("Google"));
+    }
+
+    public void initialViewFacebook() {
+        $(initialViewForFacebook).shouldHave(text("Facebook"));
+    }
+
+    public void initialViewApple() {
+        $(initialViewForApple).shouldHave(text("Apple"));
+    }
+
+    public void checkTermsFacebookBtn() {
+        $(checkTermsFacebook).click();
         $(connectBtn).click();
 
     }
 
+    public void checkTermsAppleBtn() {
+        $(checkTermsApple).click();
+        $(connectBtn).click();
+
+    }
 
 
     public Homepage clickOnLoginBtnHP() {

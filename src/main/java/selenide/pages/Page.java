@@ -17,14 +17,26 @@ public abstract class Page {
     public static String LOCALISATION_EN = "/en";
     public static String BASE_URL = "https://www.quandoo.de" + LOCALISATION_EN;
 
+
     // classes
     protected Faker faker;
+
     // Locators
     private static final By accCookiesBtn = By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll");
+    private static final By accCookiesBtnFB = By.id("cookie-policy-manage-dialog-accept-button");
 
     // Methods
     public void accCookies() {
-        $(accCookiesBtn).click();
+        if ($(accCookiesBtn).exists()) {
+            $(accCookiesBtn).click();
+        }
+
     }
 
+    public void accCookiesFB() {
+        if ($(accCookiesBtnFB).exists()) {
+            $(accCookiesBtnFB).click();
+        }
+
+    }
 }

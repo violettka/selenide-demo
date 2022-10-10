@@ -17,7 +17,7 @@ public class LoginTest {
      * This test checks successful login and logout functionality
      */
     @Test
-    public void loginWithValidCredentials() throws InterruptedException {
+    public void loginWithValidCredentials() {
         homePage = open(BASE_URL, Homepage.class);
         homePage.accCookies();
         loginPage = homePage.clickOnLoginBtn();
@@ -35,9 +35,11 @@ public class LoginTest {
     @Test
     public void googleBtnValidation() {
         homePage = open(BASE_URL, Homepage.class);
+        homePage.accCookies();
         loginPage = homePage.clickOnLoginBtn();
         loginPage.googleBtn();
         loginPage.checkTermsGoogleBtn();
+        loginPage.initialViewGoogle();
 
     }
 
@@ -45,11 +47,14 @@ public class LoginTest {
      * This test checks functionality of social network buttons (facebook)
      */
     @Test
-    public void facebookBtnValidation(){
+    public void facebookBtnValidation() {
         homePage = open(BASE_URL, Homepage.class);
+        homePage.accCookies();
         loginPage = homePage.clickOnLoginBtn();
         loginPage.facebookBtn();
         loginPage.checkTermsFacebookBtn();
+        homePage.accCookiesFB();
+        loginPage.initialViewFacebook();
 
     }
 
@@ -57,11 +62,13 @@ public class LoginTest {
      * This test checks functionality of social network buttons (apple)
      */
     @Test
-    public void appleBtnValidation(){
+    public void appleBtnValidation() {
         homePage = open(BASE_URL, Homepage.class);
+        homePage.accCookies();
         loginPage = homePage.clickOnLoginBtn();
         loginPage.appleBtn();
         loginPage.checkTermsAppleBtn();
+        loginPage.initialViewApple();
 
     }
 }
