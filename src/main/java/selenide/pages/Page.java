@@ -36,14 +36,16 @@ public abstract class Page {
     public static final By reservationsBtn = By.xpath("//*[@data-qa='navigation-reservations']");
     public static final By profileBtn = By.xpath("//*[@data-qa='header-navigation-profile']");
     public static final By accCookiesBtn = By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll");
+    private static final By accCookiesBtnFB = By.id("cookie-policy-manage-dialog-accept-button");
     protected static final By searchCityField = By.xpath("//*[@data-qa='search-bar-destination-input']");
     protected static final By searchRestaurantField = By.xpath("//input[@name='dining']");
 
 
     // Methods
     public void accCookies() {
-        $(accCookiesBtn).click();
-    }
+        if ($(accCookiesBtn).exists()) {
+            $(accCookiesBtn).click();
+        }
 
     public ProfilePage clickOnProfileBtn() {
         $(userIcon).shouldBe(Condition.visible);
@@ -55,5 +57,14 @@ public abstract class Page {
     public UserReservationsPage clickOnReservationsBtn() {
         $(reservationsBtn).click();
         return page(UserReservationsPage.class);
+    }
+}
+
+
+    public void accCookiesFB() {
+        if ($(accCookiesBtnFB).exists()) {
+            $(accCookiesBtnFB).click();
+        }
+
     }
 }
