@@ -47,4 +47,12 @@ public class Homepage extends Page {
     public void clickOnLogoutBtn() {
         $(logoutBtn).click();
     }
+
+    public void userIconHover() {
+        $(userIcon).hover();
+    }
+
+    public void clickOnLogoutBtn() {
+        $(logoutBtn).click();
+    }
 }
