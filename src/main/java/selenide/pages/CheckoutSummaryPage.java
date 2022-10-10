@@ -4,7 +4,6 @@ package selenide.pages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import org.openqa.selenium.By;
-
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
 
@@ -14,16 +13,15 @@ import static com.codeborne.selenide.Selenide.page;
 public class CheckoutSummaryPage extends Page {
 
     //locators
-    private static final By reservationBtn = By.xpath("//*[@data-qa='header-navigation-reservations']");
+    private static final By reservationBtn = By.xpath("//*[@data-qa='header-navigation-menu']/div[2]");
 
     //methods
-    public UserPage clickOnUserIcon() {
+    public UserReservationsPage clickOnUserIcon() {
         $(userIcon).shouldHave(Condition.visible);
         $(userIcon).click();
         $(reservationBtn).shouldHave(Condition.visible);
         $(reservationBtn).click();
         Selenide.sleep(3000);
-        return page(UserPage.class);
+        return page(UserReservationsPage.class);
     }
-
 }

@@ -2,7 +2,6 @@ package selenide.pages;
 
 import com.codeborne.selenide.Condition;
 import org.openqa.selenium.By;
-
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
 
@@ -16,6 +15,7 @@ public class RestaurantPage extends Page {
     private static final By nextMonth = By.xpath("//*[@data-qa='day-picker-navbar-next']");
     private static final By firstDayOfTheMonth = By.xpath("//*[@class='DayPicker-Day'][@tabindex='-1']");
     private static final By reserveTableBtn = By.xpath("//*[@data-vwo='reservation-init']");
+    private static final By timeMoveLeft = By.xpath("//*[@data-qa='time-move-left']");
     private static final By dataFieldTime = By.xpath("//*[@data-qa='booking-times']/ul/li/ul/li[1]");
 
 
@@ -25,10 +25,10 @@ public class RestaurantPage extends Page {
         $(chooseDateField).click();
         $(nextMonth).click();
         $(firstDayOfTheMonth).click();
+        $(timeMoveLeft).click();
         $(dataFieldTime).click();
 
     }
-
     public CompleteReservation clickOnReserveTable() {
         $(reserveTableBtn).click();
         return page(CompleteReservation.class);
