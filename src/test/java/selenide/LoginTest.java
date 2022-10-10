@@ -26,11 +26,12 @@ public class LoginTest {
         homePage.userIconPresent();
         homePage.userIconHover();
         homePage.clickOnLogoutBtn();
-
+        homePage.checkLoginBtn();
     }
 
     /**
      * This test checks functionality of social network buttons (google)
+     * without complete login
      */
     @Test
     public void googleBtnValidation() {
@@ -38,13 +39,13 @@ public class LoginTest {
         homePage.accCookies();
         loginPage = homePage.clickOnLoginBtn();
         loginPage.googleBtn();
-        loginPage.checkTermsGoogleBtn();
-        loginPage.initialViewGoogle();
-
+        loginPage.activateTermsGoogleBtn();
+        loginPage.checkRedirectToPage("Google");
     }
 
     /**
      * This test checks functionality of social network buttons (facebook)
+     * without complete login
      */
     @Test
     public void facebookBtnValidation() {
@@ -54,12 +55,12 @@ public class LoginTest {
         loginPage.facebookBtn();
         loginPage.checkTermsFacebookBtn();
         homePage.accCookiesFB();
-        loginPage.initialViewFacebook();
-
+        loginPage.checkRedirectToPage("Facebook");
     }
 
     /**
      * This test checks functionality of social network buttons (apple)
+     * without complete login
      */
     @Test
     public void appleBtnValidation() {
@@ -68,7 +69,6 @@ public class LoginTest {
         loginPage = homePage.clickOnLoginBtn();
         loginPage.appleBtn();
         loginPage.checkTermsAppleBtn();
-        loginPage.initialViewApple();
-
+        loginPage.checkRedirectToPage("Apple");
     }
 }
