@@ -40,10 +40,11 @@ public class Homepage extends Page {
     }
 
     public void userIconHover(){
+    public void userIconHover() {
         $(userIcon).hover();
     }
 
-    public void clickOnLogoutBtn(){
+    public void clickOnLogoutBtn() {
         $(logoutBtn).click();
     }
 }
