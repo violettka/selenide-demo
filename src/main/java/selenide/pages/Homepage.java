@@ -32,21 +32,13 @@ public class Homepage extends Page {
         $(userIcon).should(Condition.exist);
     }
 
-    public FilterPage searchRestaurant(String restaurantName,String cityName){
+    public FilterPage searchRestaurant(String restaurantName, String cityName) {
         $$(searchRestaurantField).get(1).setValue(restaurantName);
         $$(searchCityField).get(1).setValue(cityName);
         $(findBtn).click();
         return page(FilterPage.class);
     }
 
-    public void userIconHover(){
-    public void userIconHover() {
-        $(userIcon).hover();
-    }
-
-    public void clickOnLogoutBtn() {
-        $(logoutBtn).click();
-    }
 
     public void userIconHover() {
         $(userIcon).hover();
@@ -54,5 +46,9 @@ public class Homepage extends Page {
 
     public void clickOnLogoutBtn() {
         $(logoutBtn).click();
+    }
+
+    public void checkLoginBtn(){
+        $(loginBtn).should(Condition.exist);
     }
 }
