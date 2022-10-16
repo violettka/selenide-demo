@@ -1,4 +1,5 @@
 package selenide.pages;
+
 import com.codeborne.selenide.SelenideElement;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
@@ -14,9 +15,7 @@ public class RestaurantEnquiryPage extends Page {
     private static final By chooseDateField = By.xpath("//*[@data-qa='widget-date-picker-selection']");
     private static final By timePickerStartField = By.xpath("//*[@data-qa='widget-time-picker-start']/select");
     private static final By timePickerEndField = By.xpath("//*[@data-qa='widget-time-picker-end']/select");
-
     private static final By sendEnquiryBtn = By.xpath("//*[@data-qa='enquiry-submit']");
-
     private static final By nextMonth = By.xpath("//*[@data-qa='day-picker-navbar-next']");
     private static final By firstDayOfTheMonth = By.xpath("//*[@class='DayPicker-Day'][@tabindex='0']");
 

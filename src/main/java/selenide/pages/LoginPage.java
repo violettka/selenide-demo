@@ -4,11 +4,10 @@ import com.codeborne.selenide.Selenide;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.page;
 
 public class LoginPage extends Page {
 
-    LoginPage  loginPage;
+
 
     // locators
     private static final By emailField = By.xpath("//*[@data-qa='email-input']");

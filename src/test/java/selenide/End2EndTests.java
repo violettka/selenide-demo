@@ -4,44 +4,54 @@ import org.junit.jupiter.api.Test;
 import selenide.pages.*;
 
 import static com.codeborne.selenide.Selenide.open;
-import static selenide.pages.Page.*;
 
 /**
  * Class End2EndTests contains End2End tests for Quandoo
  */
-public class End2EndTests {
+public class End2EndTests extends Page {
 
-    //classes
     private Homepage homepage;
     private LoginPage loginPage;
     private FilterPage filterPage;
     private RestaurantPage restaurantPage;
-    private CompleteReservation completeReserv;
+    private CompleteReservationPage completeReservationPage;
     private CheckoutSummaryPage checkoutSumPage;
     private ProfilePage profilePage;
-    private UserReservationsPage userReservPage;
-    private EditReservationPage editReservPage;
+    private UserReservationsPage userReservationsPage;
+    private EditReservationPage editReservationPage;
+    private ReservationPage reservationPage;
 
-
-    @Test
     /**
-     * This test checks edited user's name in the existing reservation
+     * This test checks the possibility of changing the day a booking
      */
-    public void makeReservationAndChangeName() {
-        homepage = open(BASE_URL, Homepage.class);
+    @Test
+    public void LogInBookingChangeCancellationOfBooking() {
+
+        //classes
+        homepage = open(BERLIN_URL, Homepage.class);
         homepage.accCookies();
         loginPage = homepage.clickOnLoginBtn();
         loginPage.fillInValidCred();
         homepage = loginPage.clickOnLoginBtnHP();
-        filterPage = homepage.searchRestaurant(SAMPLE_RESTAURANT,SAMPLE_CITY);
-        restaurantPage = filterPage.clickOnFirstRestaurantBtn();
+        homepage.clickOnShowAllBtn();
+        homepage.clickOnItalianLabel();
+        restaurantPage = homepage.clickOnFirstRestaurantBtn();
         restaurantPage.chooseReservationDate();
-        completeReserv = restaurantPage.clickOnReserveTable();
-        checkoutSumPage = completeReserv.clickOnReserveNowBtn();
-        profilePage = checkoutSumPage.clickOnProfileBtn();
-        profilePage.changeFirstAndLastName(USER_FIRST_NAME,USER_LAST_NAME);
-        userReservPage = profilePage.clickOnReservationsBtn();
-        editReservPage = userReservPage.clickOnEditReservation();
-        editReservPage.checkName(USER_FIRST_NAME);
+        reservationPage = restaurantPage.clickOnReserveBtn();
+        completeReservationPage = reservationPage.clickOnReserveNowBtn();
+        reservationPage.clickOnHeaderNavigationBtn();
+        userReservationsPage = reservationPage.clickOnProfileBtn();
+        userReservationsPage.clickOnReservations();
+        editReservationPage = userReservationsPage.clickOnEditReservation();
+        editReservationPage.chooseReservationDateERP();
+        editReservationPage.checkTextOptional();
+        editReservationPage.clickOnUpdateReservationBtn();
+        reservationPage.clickOnHeaderNavigationBtn();
+        userReservationsPage = reservationPage.clickOnProfileBtn();
+        userReservationsPage.clickOnReservations();
+        userReservationsPage.clickOnCancelReservationBtn();
+        userReservationsPage.clickOnYesCancelReservationBtn();
+        userReservationsPage.clickOnReservations();
+        restaurantPage = userReservationsPage.clickOnReserveAgainBtn();
     }
 }
