@@ -47,20 +47,6 @@ public abstract class Page {
         }
     }
 
-        public ProfilePage clickOnProfileBtn () {
-            $(userIcon).shouldBe(Condition.visible);
-            $(userIcon).click();
-            $(profileBtn).click();
-            return page(ProfilePage.class);
-        }
-
-        public UserReservationsPage clickOnReservationsBtn () {
-            $(reservationsBtn).click();
-            return page(UserReservationsPage.class);
-        }
-
-
-
     public void accCookiesFB() {
         if ($(accCookiesBtnFB).exists()) {
             $(accCookiesBtnFB).click();
