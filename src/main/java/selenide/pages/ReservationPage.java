@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Selenide.page;
 
 public class ReservationPage extends Page {
 
-    // locators
+     // locators
     private static final By reserveNowBtn = By.xpath("//button[@data-qa='reservation-submit']");
 
     // methods

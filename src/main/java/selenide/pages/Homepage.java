@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Selenide.*;
 
 /**
- * Class Homepage contains all homepage locators and methods.
+ *  Class Homepage contains all homepage locators and methods.
  */
 public class Homepage extends Page {
 
