@@ -1,6 +1,7 @@
 package selenide.pages;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Selenide;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.*;
@@ -29,9 +30,10 @@ public class Homepage extends Page {
     }
 
     public FilterPage searchRestaurant(String restaurantName,String cityName){
+        $$(searchCityField).get(1).setValue(cityName).click();
         $$(searchRestaurantField).get(1).setValue(restaurantName);
-        $$(searchCityField).get(1).setValue(cityName);
         $(findBtn).click();
         return page(FilterPage.class);
     }
+
 }
