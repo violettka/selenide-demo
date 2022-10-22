@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
 
 /**
- *  Abstract class Page contains common locators, data and methods shared within the Quandoo pages.
+ * Abstract class Page contains common locators, data and methods shared within the Quandoo pages.
  */
 public abstract class Page {
     // classes
@@ -25,15 +25,12 @@ public abstract class Page {
     public static final String BERLIN_URL = "https://www.quandoo.de/en/result?destination=berlin";
 
     //test data
-
     public static String SAMPLE_RESTAURANT = "cavallino rosso";
     public static String SAMPLE_CITY = "Berlin";
     public static String USER_FIRST_NAME = faker.name().firstName();
     public static String USER_LAST_NAME = faker.name().lastName();
 
-
     // constant locators
-
     private static final By accCookiesBtn = By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll");
     public static final By signUpBtn = By.xpath("//*[@data-qa='header-register-btn']");
     public static final By loginBtn = By.xpath("//*[@data-qa='header-login-btn']");
@@ -60,8 +57,4 @@ public abstract class Page {
         $(userIcon).click();
         return page(UserReservationsPage.class);
     }
-
-
 }
-
-

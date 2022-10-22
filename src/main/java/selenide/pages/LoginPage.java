@@ -23,4 +23,3 @@ public class LoginPage extends Page {
         return Selenide.page(Homepage.class);
     }
 }
-

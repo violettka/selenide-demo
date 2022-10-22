@@ -44,5 +44,3 @@ public class RestaurantEnquiryPage extends Page {
         return $(sendEnquiryBtn);
     }
 }
-
-

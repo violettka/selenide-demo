@@ -20,4 +20,3 @@ public class ReservationPage extends Page {
         return page(CompleteReservationPage.class);
     }
 }
-
