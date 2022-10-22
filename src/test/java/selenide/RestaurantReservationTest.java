@@ -17,12 +17,10 @@ public class RestaurantReservationTest {
     private FilterPage filterPage;
     private RestaurantPage restaurantPage;
     private CompleteReservation completeReservation;
-    private CheckoutSummaryPage checkoutSummaryPage;
-    private UserReservationsPage userReservationsPage;
 
     @Test
 /**
- *  Test End2End-Restaurant reservation and cancellation
+ *  Check On Reserve Now Btn
  */
     public void setReservationAndFilter() {
 
@@ -31,15 +29,14 @@ public class RestaurantReservationTest {
         loginPage = homepage.clickOnLoginBtn();
         loginPage.fillInValidCred();
         homepage = loginPage.clickOnLoginBtnHP();
-        filterPage = homepage.chooseCity(SAMPLE_CITY);
-        filterPage.chooseCuisine();
+        filterPage = homepage.searchRestaurant("",SAMPLE_CITY);
+        filterPage.clickOnArabicCuisine();
         restaurantPage = filterPage.clickOnChooseRestaurant();
         restaurantPage.chooseReservationDate();
         completeReservation = restaurantPage.clickOnReserveTable();
-        checkoutSummaryPage = completeReservation.clickOnReserveNowBtn();
-        userReservationsPage = checkoutSummaryPage.clickOnUserIcon();
-        userReservationsPage.clickOnCancelPresentReservation();
+        completeReservation.checkOnReserveNowBtn();
+
+
 
     }
-
 }

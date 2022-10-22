@@ -30,15 +30,10 @@ public class Homepage extends Page {
     }
 
     public FilterPage searchRestaurant(String restaurantName,String cityName){
+        $$(searchCityField).get(1).setValue(cityName).click();
         $$(searchRestaurantField).get(1).setValue(restaurantName);
-        $$(searchCityField).get(1).setValue(cityName);
         $(findBtn).click();
         return page(FilterPage.class);
     }
-    public FilterPage chooseCity(String cityName) {
-        $$(searchCityField).get(1).setValue(cityName);
-        Selenide.sleep(1000);
-        $(findBtn).click();
-        return page(FilterPage.class);
-    }
+
 }
