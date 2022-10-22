@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class RestaurantPage extends Page {
 
     /**
-     * Class RestaurantPage contains all restaurant page locators and methods.
+     *  Class RestaurantPage contains all restaurant page locators and methods.
      */
 
     // locators

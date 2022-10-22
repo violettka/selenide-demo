@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
 
 /**
- * Abstract class Page contains common locators, data and methods shared within the Quandoo pages.
+ *  Abstract class Page contains common locators, data and methods shared within the Quandoo pages.
  */
 public abstract class Page {
     // classes
