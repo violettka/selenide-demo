@@ -39,19 +39,20 @@ public class End2EndTests extends Page {
         restaurantPage.chooseReservationDate();
         reservationPage = restaurantPage.clickOnReserveBtn();
         completeReservationPage = reservationPage.clickOnReserveNowBtn();
-        reservationPage.clickOnHeaderNavigationBtn();
+        reservationPage.clickOnProfileBtn();
         userReservationsPage = reservationPage.clickOnProfileBtn();
         userReservationsPage.clickOnReservations();
         editReservationPage = userReservationsPage.clickOnEditReservation();
         editReservationPage.chooseReservationDateERP();
         editReservationPage.checkTextOptional();
         editReservationPage.clickOnUpdateReservationBtn();
-        reservationPage.clickOnHeaderNavigationBtn();
+        reservationPage.clickOnProfileBtn();
         userReservationsPage = reservationPage.clickOnProfileBtn();
         userReservationsPage.clickOnReservations();
         userReservationsPage.clickOnCancelReservationBtn();
         userReservationsPage.clickOnYesCancelReservationBtn();
         userReservationsPage.clickOnReservations();
-        restaurantPage = userReservationsPage.clickOnReserveAgainBtn();
+        restaurantPage = userReservationsPage.checkReserveAgainBtn();
+
     }
 }

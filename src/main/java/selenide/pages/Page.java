@@ -56,6 +56,11 @@ public abstract class Page {
         return page(UserReservationsPage.class);
     }
 
+    public UserReservationsPage clickOnUserIcon() {
+        $(userIcon).click();
+        return page(UserReservationsPage.class);
+    }
+
 
 }
 

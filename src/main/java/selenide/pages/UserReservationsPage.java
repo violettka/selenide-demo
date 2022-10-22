@@ -12,17 +12,11 @@ import static com.codeborne.selenide.Selenide.page;
 public class UserReservationsPage extends Page {
 
     // locators
-
     private static final By editReservationBtn = By.xpath("//button[contains(.,'Edit reservation')]");
-    static final By reserveAgainBtn = By.xpath("//*[@data-qa='cta-rebook-reservation-101065855']");
-    static final By cancelReservationBtn = By.xpath("//*[@data-qa='cta-rebook-reservation-101065855']");
+    static final By cancelReserveAgainBtn = By.xpath("//*[@data-qa='cta-rebook-reservation-101065855']");
     static final By yesCancelReservationBtn = By.xpath("//*[@data-qa='cancel_no']");
 
-    //test data
-
     // methods
-
-
     public EditReservationPage clickOnEditReservation() {
         $(editReservationBtn).shouldBe(Condition.visible);
         $(editReservationBtn).click();
@@ -35,22 +29,19 @@ public class UserReservationsPage extends Page {
     }
 
     public UserReservationsPage clickOnYesCancelReservationBtn() {
+        $(yesCancelReservationBtn).shouldBe(Condition.visible);
         $(yesCancelReservationBtn).click();
         return page(UserReservationsPage.class);
     }
 
-
-    public RestaurantPage clickOnReserveAgainBtn() {
-        $(reserveAgainBtn).click();
+    public RestaurantPage checkReserveAgainBtn() {
+        $(cancelReserveAgainBtn).shouldBe(Condition.visible);
         return page(RestaurantPage.class);
     }
 
-
     public UserReservationsPage clickOnCancelReservationBtn() {
-        $(cancelReservationBtn).click();
+        $(cancelReserveAgainBtn).click();
         return page(UserReservationsPage.class);
     }
-
-
 }
 

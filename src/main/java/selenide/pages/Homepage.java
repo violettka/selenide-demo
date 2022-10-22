@@ -26,11 +26,6 @@ public class Homepage extends Page {
         return Selenide.page(SignUpPage.class);
     }
 
-    public FilterPage clickOnFindBtn() {
-        $(findBtn).click();
-        return Selenide.page(FilterPage.class);
-    }
-
     public LoginPage clickOnLoginBtn() {
         $(loginBtn).click();
         return page(LoginPage.class);
