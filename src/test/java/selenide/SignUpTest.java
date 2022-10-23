@@ -1,7 +1,6 @@
 package selenide;
 
 import com.codeborne.selenide.Condition;
-
 import org.junit.jupiter.api.Test;
 import selenide.pages.Homepage;
 import selenide.pages.SignUpPage;

@@ -11,13 +11,36 @@ import static com.codeborne.selenide.Selenide.page;
  */
 public class UserReservationsPage extends Page {
 
-    //locators
+    // locators
     private static final By editReservationBtn = By.xpath("//button[contains(.,'Edit reservation')]");
+    static final By cancelReserveAgainBtn = By.xpath("//*[@data-qa='cta-rebook-reservation-101065855']");
+    static final By yesCancelReservationBtn = By.xpath("//*[@data-qa='cancel_no']");
 
-    //methods
+    // methods
     public EditReservationPage clickOnEditReservation() {
         $(editReservationBtn).shouldBe(Condition.visible);
         $(editReservationBtn).click();
         return page(EditReservationPage.class);
+    }
+
+    public UserReservationsPage clickOnReservations() {
+        $(reservationsBtn).click();
+        return page(UserReservationsPage.class);
+    }
+
+    public UserReservationsPage clickOnYesCancelReservationBtn() {
+        $(yesCancelReservationBtn).shouldBe(Condition.visible);
+        $(yesCancelReservationBtn).click();
+        return page(UserReservationsPage.class);
+    }
+
+    public RestaurantPage checkReserveAgainBtn() {
+        $(cancelReserveAgainBtn).shouldBe(Condition.visible);
+        return page(RestaurantPage.class);
+    }
+
+    public UserReservationsPage clickOnCancelReservationBtn() {
+        $(cancelReserveAgainBtn).click();
+        return page(UserReservationsPage.class);
     }
 }
