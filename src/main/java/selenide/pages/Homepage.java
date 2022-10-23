@@ -11,13 +11,12 @@ import static com.codeborne.selenide.Selenide.*;
 public class Homepage extends Page {
 
     // locators
-    private static final By findBtn = By.xpath("//*[@data-qa='button-search-find-hero']");
+
+    private static By loginBtn = By.xpath("//*[@data-qa='header-login-btn']");
+    private static By userIcon = By.xpath("//*[@data-qa='header-navigation-button']");
+
 
     // methods
-    public SignUpPage clickOnSignUpBtn() {
-        $(signUpBtn).click();
-        return page(SignUpPage.class);
-    }
 
     public LoginPage clickOnLoginBtn() {
         $(loginBtn).click();
@@ -28,10 +27,11 @@ public class Homepage extends Page {
         $(userIcon).should(Condition.exist);
     }
 
-    public FilterPage searchRestaurant(String restaurantName,String cityName){
-        $$(searchRestaurantField).get(1).setValue(restaurantName);
-        $$(searchCityField).get(1).setValue(cityName);
-        $(findBtn).click();
-        return page(FilterPage.class);
+    public void userIconHover() {
+        $(userIcon).hover();
+    }
+
+    public void checkLoginBtn(){
+        $(loginBtn).should(Condition.exist);
     }
 }
