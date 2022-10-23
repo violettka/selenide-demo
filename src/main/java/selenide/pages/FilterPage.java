@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
 
 /**
- *  Class FilterPage contains all filter page locators and methods.
+ * Class FilterPage contains all filter page locators and methods.
  */
 
 public class FilterPage extends Page {

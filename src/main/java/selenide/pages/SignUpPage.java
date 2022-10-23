@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Selenide.$;
 
 /**
- *  Class SignUpPage contains all Sign Up page locators and methods.
+ * Class SignUpPage contains all Sign Up page locators and methods.
  */
 public class SignUpPage extends Page {
     // locators

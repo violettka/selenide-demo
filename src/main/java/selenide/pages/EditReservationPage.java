@@ -10,7 +10,7 @@ import static selenide.pages.RestaurantPage.chooseDateField;
 import static selenide.pages.RestaurantPage.nextMonth;
 
 /**
- *  Class EditReservationPage contains all edit reservation page locators and methods.
+ * Class EditReservationPage contains all edit reservation page locators and methods.
  */
 public class EditReservationPage extends Page {
 

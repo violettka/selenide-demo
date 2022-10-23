@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
 
 /**
- *  Class CompleteReservationPage contains all complete reservation locators and methods.
+ * Class CompleteReservationPage contains all complete reservation locators and methods.
  */
 public class CompleteReservationPage extends Page {
 
