@@ -17,4 +17,10 @@ public class FilterPage extends Page {
         $(firstRestaurantBtn).click();
         return page(RestaurantPage.class);
     }
+
+    public RestaurantPage clickOnRestaurantNum(int number) {
+        By specialNum = By.xpath("//*[@id='tab-merchants']/div[" + number + 1 + "]/div[1]/a");
+        $(specialNum).click();
+        return page(RestaurantPage.class);
+    }
 }

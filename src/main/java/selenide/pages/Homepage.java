@@ -28,8 +28,8 @@ public class Homepage extends Page {
     }
 
     public FilterPage searchRestaurant(String restaurantName,String cityName){
+        $$(searchCityField).get(1).setValue(cityName).click();
         $$(searchRestaurantField).get(1).setValue(restaurantName);
-        $$(searchCityField).get(1).setValue(cityName);
         $(findBtn).click();
         return page(FilterPage.class);
     }

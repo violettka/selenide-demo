@@ -16,7 +16,7 @@ public class End2EndTests {
     private LoginPage loginPage;
     private FilterPage filterPage;
     private RestaurantPage restaurantPage;
-    private CompleteReservation completeReserv;
+    private CompleteReservationPage completeReserv;
     private CheckoutSummaryPage checkoutSumPage;
     private ProfilePage profilePage;
     private UserReservationsPage userReservPage;
@@ -36,7 +36,7 @@ public class End2EndTests {
         filterPage = homepage.searchRestaurant(SAMPLE_RESTAURANT,SAMPLE_CITY);
         restaurantPage = filterPage.clickOnFirstRestaurantBtn();
         restaurantPage.chooseReservationDate();
-        completeReserv = restaurantPage.clickOnReserveTable();
+        completeReserv = restaurantPage.clickOnReserveBtn();
         checkoutSumPage = completeReserv.clickOnReserveNowBtn();
         profilePage = checkoutSumPage.clickOnProfileBtn();
         profilePage.changeFirstAndLastName(USER_FIRST_NAME,USER_LAST_NAME);

@@ -9,7 +9,6 @@ public class CompleteReservationPage extends Page {
 
     // locators
     private static final By reserveNowBtn = By.xpath("//button[@data-qa='reservation-submit']");
-    private static By loginBtn = By.xpath("//*[@data-qa='header-login-btn']");
 
     // methods
     public CheckoutSummaryPage clickOnReserveNowBtn() {

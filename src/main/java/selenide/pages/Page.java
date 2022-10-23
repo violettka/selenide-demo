@@ -64,7 +64,9 @@ public abstract class Page {
 
     public UserReservationsPage clickOnLoginIcon() {
         specialName = $(restaurantName).getText();
+        $(userIcon).shouldHave(Condition.visible);
         $(userIcon).click();
+        $(reservationsBtn).shouldHave(Condition.visible);
         $(reservationsBtn).click();
         $(upcomingReservations).shouldHave(Condition.text(specialName));
         return page(UserReservationsPage.class);

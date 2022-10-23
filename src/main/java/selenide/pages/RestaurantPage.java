@@ -18,6 +18,8 @@ public class RestaurantPage extends Page {
     private static final By reserveTableBtn = By.xpath("//*[@data-vwo='reservation-init']");
     private static final By timePickerStartField = By.xpath("//*[@data-qa='widget-time-picker-start']/select");
     private static final By timePickerEndField = By.xpath("//*[@data-qa='widget-time-picker-end']/select");
+    private static final By timeMoveLeft = By.xpath("//*[@data-qa='time-move-left']");
+    private static final By firstPossibleBookingTime = By.xpath("(//*[@data-qa='booking-times']/ul/li/ul/li)[1]");
 
     //methods
     public void chooseReservationDate() {
@@ -25,14 +27,10 @@ public class RestaurantPage extends Page {
     }
 
     public void dayChoose() {
+        $(chooseDateField).shouldBe(Condition.visible);
         $(chooseDateField).click();
         $(nextMonth).click();
         $(firstDayOfTheMonth).click();
-    }
-
-    public CompleteReservation clickOnReserveTable() {
-        $(reserveTableBtn).click();
-        return page(CompleteReservation.class);
     }
 
     public void chooseTimeslot(String timeFrom, String timeTo) {
@@ -45,9 +43,10 @@ public class RestaurantPage extends Page {
         return page(CompleteReservationPage.class);
     }
 
-    public CompleteReservationPage reserveNow(String timeFrom, String timeTo) {
+    public CompleteReservationPage reserveNow() {
         dayChoose();
-        chooseTimeslot(timeFrom, timeTo);
+        $(timeMoveLeft).click();
+        $(firstPossibleBookingTime).click();
         clickOnReserveBtn();
         return page(CompleteReservationPage.class);
     }

@@ -28,7 +28,7 @@ public class RestaurantReservationTest {
         loginPage.clickOnLoginBtnHP();
         filterPage = homepage.searchRestaurant(SAMPLE_RESTAURANT,SAMPLE_CITY);
         restaurantPage = filterPage.clickOnFirstRestaurantBtn();
-        completeReservationPage = restaurantPage.reserveNow("7:00 pm", "7:30 pm");
+        completeReservationPage = restaurantPage.reserveNow();
         checkoutSummaryPage = completeReservationPage.clickOnReserveNowBtn();
         userReservationsPage = checkoutSummaryPage.clickOnLoginIcon();
         userReservationsPage.anyRestaurantIsDisplayed();
