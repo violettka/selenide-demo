@@ -28,6 +28,8 @@ public class LoginPage extends Page {
     private static By initialViewForFacebook = By.xpath("//*[@id='header_block']");
     private static By initialViewForApple = By.xpath("//*[@id='ac-localnav']");
 
+    private static final By accCookiesBtnFB = By.id("cookie-policy-manage-dialog-accept-button");
+
     private static By emailField = By.xpath("//*[@data-qa='email-input']");
     private static By passwordField = By.xpath("//*[@data-qa='password-input']");
     private static By loginBtn = By.xpath("//*[@data-qa='login-btn']");
@@ -39,21 +41,27 @@ public class LoginPage extends Page {
         $(passwordField).setValue(VALID_PASS);
     }
 
-    public void googleBtn() {
+    public void clickGoogleBtn() {
         $(googleBtn).click();
     }
 
-    public void facebookBtn() {
+    public void clickFacebookBtn() {
         $(facebookBtn).click();
     }
 
-    public void appleBtn() {
+    public void clickAppleBtn() {
         $(appleBtn).click();
     }
 
     public void activateTermsGoogleBtn() {
         $(checkTermsGoogle).click();
         $(connectBtn).click();
+    }
+
+    public void accCookiesFB() {
+        if ($(accCookiesBtnFB).exists()) {
+            $(accCookiesBtnFB).click();
+        }
     }
 
     // Initial views
@@ -68,12 +76,10 @@ public class LoginPage extends Page {
         $(connectBtn).click();
     }
 
-
     public Homepage clickOnLoginBtnHP() {
         $(loginBtn).click();
         return page(Homepage.class);
     }
-
 
     public void checkRedirectToPage(String pageName) {
         By pageLocator = null;

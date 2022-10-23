@@ -38,7 +38,7 @@ public class LoginTest {
         homePage = open(BASE_URL, Homepage.class);
         homePage.accCookies();
         loginPage = homePage.clickOnLoginBtn();
-        loginPage.googleBtn();
+        loginPage.clickGoogleBtn();
         loginPage.activateTermsGoogleBtn();
         loginPage.checkRedirectToPage("Google");
     }
@@ -52,9 +52,9 @@ public class LoginTest {
         homePage = open(BASE_URL, Homepage.class);
         homePage.accCookies();
         loginPage = homePage.clickOnLoginBtn();
-        loginPage.facebookBtn();
+        loginPage.clickFacebookBtn();
         loginPage.checkTermsFacebookBtn();
-        homePage.accCookiesFB();
+        loginPage.accCookiesFB();
         loginPage.checkRedirectToPage("Facebook");
     }
 
@@ -67,7 +67,7 @@ public class LoginTest {
         homePage = open(BASE_URL, Homepage.class);
         homePage.accCookies();
         loginPage = homePage.clickOnLoginBtn();
-        loginPage.appleBtn();
+        loginPage.clickAppleBtn();
         loginPage.checkTermsAppleBtn();
         loginPage.checkRedirectToPage("Apple");
     }

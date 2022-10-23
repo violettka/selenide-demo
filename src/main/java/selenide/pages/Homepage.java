@@ -14,7 +14,7 @@ public class Homepage extends Page {
 
     private static By loginBtn = By.xpath("//*[@data-qa='header-login-btn']");
     private static By userIcon = By.xpath("//*[@data-qa='header-navigation-button']");
-    private static By logoutBtn = By.xpath("//*[@data-qa='header-navigation-logout']");
+
 
     // methods
 
@@ -29,10 +29,6 @@ public class Homepage extends Page {
 
     public void userIconHover() {
         $(userIcon).hover();
-    }
-
-    public void clickOnLogoutBtn() {
-        $(logoutBtn).click();
     }
 
     public void checkLoginBtn(){
