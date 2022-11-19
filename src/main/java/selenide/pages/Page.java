@@ -12,12 +12,16 @@ import static com.codeborne.selenide.Selenide.page;
  */
 public abstract class Page {
 
+    public static String specialName = "";
+
     // classes
     static Faker faker = new Faker();
 
     // constant credentials
     public static String VALID_EMAIL = "violetaabramova@yandex.ru";
     public static String VALID_PASS = "8vzN$ht4eFuG45$";
+    public static String CUISINES_PIZZA = "Pizza";
+    public static String RESTAURANT_CITY = "Berlin";
 
     // constant url
     public static String LOCALISATION_EN = "/en";
@@ -38,7 +42,8 @@ public abstract class Page {
     public static final By accCookiesBtn = By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll");
     protected static final By searchCityField = By.xpath("//*[@data-qa='search-bar-destination-input']");
     protected static final By searchRestaurantField = By.xpath("//input[@name='dining']");
-
+    private static By restaurantName = By.xpath("//*[@data-qa='reservation-details-merchant-name']");
+    private static final By upcomingReservations = By.xpath("//*[@data-qa='cards-upcoming-reservations']");
 
     // Methods
     public void accCookies() {
@@ -54,6 +59,16 @@ public abstract class Page {
 
     public UserReservationsPage clickOnReservationsBtn() {
         $(reservationsBtn).click();
+        return page(UserReservationsPage.class);
+    }
+
+    public UserReservationsPage clickOnLoginIcon() {
+        specialName = $(restaurantName).getText();
+        $(userIcon).shouldHave(Condition.visible);
+        $(userIcon).click();
+        $(reservationsBtn).shouldHave(Condition.visible);
+        $(reservationsBtn).click();
+        $(upcomingReservations).shouldHave(Condition.text(specialName));
         return page(UserReservationsPage.class);
     }
 }

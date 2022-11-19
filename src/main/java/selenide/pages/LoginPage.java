@@ -7,8 +7,6 @@ import static com.codeborne.selenide.Selenide.page;
 
 public class LoginPage extends Page {
 
-    LoginPage loginPage;
-
     // locators
     private static By emailField = By.xpath("//*[@data-qa='email-input']");
     private static By passwordField = By.xpath("//*[@data-qa='password-input']");
